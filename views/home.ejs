@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #black {
+        background-color: rgb(18, 17, 17);
+        color: white;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid #ddd;
+        text-align: left;
+        background-color: rgb(18, 17, 17);
+        color: white;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 15px;
+      }
+      .info {
+        height: 200px;
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgb(0, 0, 0);
+        padding: 30px 30px 30px 30px;
+        border-radius: 10px;
+      }
+      .info input {
+        height: 34px;
+        font-size: 19px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+      }
+      .info button {
+        height: 40px;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: green;
+        color: white;
+        font-family: sans-serif;
+        border-radius: 12px;
+      }
+      .divide {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .d1 {
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+      }
+      .d2 {
+        width: 60vw;
+      }
+      @media screen and (max-width: 800px) {
+        .divide {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .d1 {
+          width: 100vw;
+        }
+        .d2 {
+          width: 100vw;
+        }
+        .info {
+          width: 90vw;
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: green;
+      "
+    >
+      EMPLOYEES MANAGEMENT
+    </h1>
+    <div class="divide">
+      <div class="d1">
+        <h2 style="color: black">ADD EMPLOYEES</h2>
+        <form action="/" method="post" class="info">
+          <input type="text" placeholder="Enter Your Name" name="name" />
+
+          <input type="number" placeholder="Your Salary" name="salary" />
+
+          <input type="text" placeholder="Enter Your Job Title" name="post" />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+      <div class="d2">
+        <table>
+          <tr id="black">
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>JOB TITLE</th>
+          </tr>
+          <br />
+
+          <% data.forEach(element => { %>
+          <tr>
+            <td><%= element.name %></td>
+            <td><%= element.salary %></td>
+            <td><%= element.post %></td>
+
+            <br />
+          </tr>
+
+          <% }) %>
+        </table>
+
+        <br />
+
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
